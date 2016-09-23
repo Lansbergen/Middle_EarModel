@@ -22,8 +22,8 @@ struct ParamEarCanal {
 
 	ParamGeneral PG;
 
-	double LengthEar; // length ear canal dimensions
-	double DiamEar; // diameter ear canal dimensions
+	float LengthEar; // length ear canal dimensions
+	float DiamEar; // diameter ear canal dimensions
 	double Vec = (PG.pi * (DiamEar*DiamEar)  * LengthEar) / 8;   // volume of tappered ear - canal
 };
 
@@ -39,16 +39,16 @@ struct ParamKringlebotn {
 	const doublePk.Ra = change.mec_R; // resistance
 	*/
 	// alternatively
-	const double La = 1e-3;		// inertance
-	const double Ca = 3.9e-6;	// compliance
-	const double Ct = 0.4e-6;	// compliance
+	const float La = 1e-3;		// inertance
+	const float Ca = 3.9e-6;	// compliance
+	const float Ct = 0.4e-6;	// compliance
 	const int Ra = 60;			// resistance
 
 	// block Z1b
-	const double Ld = 7.5e-3;     // inertance
-	const double Ls = 66e-3;      // inertance
-	const double Cs = 0.3e-6;     // compliance
-	const double Cr = 1.3e-6;     // compliance
+	const float Ld = 7.5e-3;     // inertance
+	const float Ls = 66e-3;      // inertance
+	const float Cs = 0.3e-6;     // compliance
+	const float Cr = 1.3e-6;     // compliance
 	const int Rs = 20;         // resistance
 	const int Rr = 120;        // resistance
 

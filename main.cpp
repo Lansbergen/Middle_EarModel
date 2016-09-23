@@ -19,10 +19,17 @@ int main(int argc, char** argv) {
 
 	int speedofsound = temp.getSpeedofLight();
 	
-	//cout << "\n\n Speed of sound is : " << speedofsound;
-	
 	cout << "\n\n Speed of sound is : " << temp.getSpeedofLight();
 	
+	/*
+	cout << "\n\n Enter diameter Ear-canal : ";
+	double diameter;
+	cin >> diameter;
+	temp.setDiameter(diameter);
+	*/
+	temp.setDiameter();
+
+	cout << "\n\n ear-canal diameter is now : " << temp.getDiameter();
 
 	return 0;
 
