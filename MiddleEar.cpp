@@ -19,6 +19,11 @@ MiddleEar::MiddleEar(){
 
 MiddleEar::MiddleEar(int freq_range) {
 	
+	if (freq_range > 2500) {
+		std::cout << "Error: Frequency range exceeds 2500 Hz.";
+		exit(1);
+	};
+
 	/*------------------------------------------------
 	needs to be a 1D array the size of freq_range
 	(thus index is 1 serves as 2nd dimension)
