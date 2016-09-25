@@ -4,7 +4,9 @@
 #define MIDDLEEAR_H 
 
 #include "Parameters.h"
+#include <complex>
 
+typedef std::complex<float>* DataArray;
 
 // Contains declarations for MiddleEar Class
 
@@ -15,7 +17,8 @@ public:
 	// constructors
 	MiddleEar();
 	MiddleEar(int freq_range);
-	
+	MiddleEar(int freq_range, int pressure_range);
+
 	// assessor - mutator functions
 	void setAge(int age_of_person);
 	int  getAge();
@@ -25,17 +28,23 @@ public:
 	float getDiameter();
 	float getLength();
 	
-	int getSpeedofLight();
+	int getSpeedofSound();
 
 	// functions acting on data
 	void kringlebotn();
 	
+	// store function
+	void storeData();
+
 
 private:
 	int age;
+	int index;
 	ParamGeneral PG;
 	ParamKringlebotn PK;
 	ParamEarCanal PEC;
+
+	DataArray Data;
 
 };
 

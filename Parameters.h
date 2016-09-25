@@ -38,17 +38,17 @@ struct ParamKringlebotn {
 	const doublePk.Ct = 0.075*Ctot;   // compliance / factor .075 for Ct
 	const doublePk.Ra = change.mec_R; // resistance
 	*/
-	// alternatively
-	const float La = 1e-3;		// inertance
-	const float Ca = 3.9e-6;	// compliance
-	const float Ct = 0.4e-6;	// compliance
+	// alternatively -> fixed values
+	const float La = 1e-3f;		// inertance
+	const float Ca = 3.9e-6f;	// compliance
+	const float Ct = 0.4e-6f;	// compliance
 	const int Ra = 60;			// resistance
 
 	// block Z1b
-	const float Ld = 7.5e-3;     // inertance
-	const float Ls = 66e-3;      // inertance
-	const float Cs = 0.3e-6;     // compliance
-	const float Cr = 1.3e-6;     // compliance
+	const float Ld = 7.5e-3f;     // inertance
+	const float Ls = 66e-3f;      // inertance
+	const float Cs = 0.3e-6f;     // compliance
+	const float Cr = 1.3e-6f;     // compliance
 	const int Rs = 20;         // resistance
 	const int Rr = 120;        // resistance
 

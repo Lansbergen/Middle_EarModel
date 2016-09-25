@@ -2,9 +2,8 @@
 #include "MiddleEar.h"
 #include <complex>
 #include <cmath>
+#include <iostream>
 
-
-typedef float* Data;
 
 // define functions and constructors class MiddleEar
 
@@ -13,20 +12,36 @@ MiddleEar::MiddleEar(){
 	// default constructor
 
 	/* for now do nothing */
+
+	Data = NULL;
+
 }
 
 MiddleEar::MiddleEar(int freq_range) {
+	
+	/*------------------------------------------------
+	needs to be a 1D array the size of freq_range
+	(thus index is 1 serves as 2nd dimension)
+	------------------------------------------------*/
+
+	Data = new std::complex<float>[freq_range];
+
+	index = freq_range;
+		
+}
+
+MiddleEar::MiddleEar(int freq_range, int pressure_range) {
 
 	/*
 	insert dynamic allocated array?
 	*/
 
-	/*------------------------------------------------ 
-	needs to be a 3D array the size of freq_range
-	times pressure times (normalized between 0 and 1?)
+	/*------------------------------------------------
+	needs to be a 2D array the size of freq_range
+	times pressure times 
+	(thus index is 1 serves as 3th dimension)
 	------------------------------------------------*/
 }
-
 
 
 // functions acting on data
@@ -37,6 +52,13 @@ void MiddleEar::kringlebotn() {
 	// create complex variables
 	std::complex<double> Z1;
 	std::complex<double> Z2;
+
+	for (int i = 0; i < index; i++) {
+		Data[i].real(i);
+		Data[i].imag(i + 1);
+
+		std::cout << Data[i] << "\n";
+	};
 
 	/*
 	// part 1
@@ -86,10 +108,11 @@ float  MiddleEar::getDiameter() {
 
 float  MiddleEar::getLength() {
 
-	return PEC.LengthEar;
+	//return PEC.LengthEar;
+	return PK.Ca;
 }
 
-int MiddleEar::getSpeedofLight() {
+int MiddleEar::getSpeedofSound() {
 
 	return PG.c;
 }
