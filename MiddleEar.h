@@ -30,8 +30,7 @@ public:
 	
 	int getSpeedofSound();
 
-	// functions acting on data
-	void kringlebotn();
+	
 	
 	// store function
 	void storeData();
@@ -43,9 +42,14 @@ private:
 	ParamGeneral PG;
 	ParamKringlebotn PK;
 	ParamEarCanal PEC;
-
 	DataArray Data;
 
+	// supporting functions
+	float angularFreq(int freq);	// angular frequency
+
+	// functions acting on data
+	void kringlebotn();
+	
 };
 
 

@@ -32,6 +32,8 @@ MiddleEar::MiddleEar(int freq_range) {
 	Data = new std::complex<float>[freq_range];
 
 	index = freq_range;
+
+	kringlebotn();
 		
 }
 
@@ -48,43 +50,9 @@ MiddleEar::MiddleEar(int freq_range, int pressure_range) {
 	------------------------------------------------*/
 }
 
-
-// functions acting on data
-void MiddleEar::kringlebotn() {
-
-	// Z1a
-	
-	// create complex variables
-	std::complex<double> Z1;
-	std::complex<double> Z2;
-
-	for (int i = 0; i < index; i++) {
-		Data[i].real(i);
-		Data[i].imag(i + 1);
-
-		std::cout << Data[i] << "\n";
-	};
-
-	/*
-	// part 1
-	double Xeq_1 = (w*La) - (1 / (w*Ca));
-	double Req_1 = Ra;
-
-	// part 2
-	double Xeq_2 = -1 / (w*Ct);
-	double Req_2 = 0;
-
-	// total equavalent impedance
-	Z1.imag(Xeq_1);
-	Z1.real(Req_1);
-	Z2.imag(Xeq_2);
-	Z2.real(Req_2);
-
-	complex<double> Z = Z1*Z2 / (Z1 + Z2);
-	*/
-
-}
-
+/*
+- Public functions -
+*/
 
 // accessor and mutation functions
 void MiddleEar::setAge(int age_of_person) {
@@ -120,4 +88,59 @@ float  MiddleEar::getLength() {
 int MiddleEar::getSpeedofSound() {
 
 	return PG.c;
+}
+
+
+/* 
+- Private functions - 
+*/
+
+// supporting functions
+float MiddleEar::angularFreq(int freq) {
+	
+	float w = 2 * PG.pi * freq;
+
+	return w;
+};
+
+// functions acting on data
+void MiddleEar::kringlebotn() {
+
+	// Z1a
+	// create complex variables
+	DataArray Z1a_1, Z1a_2;
+	Z1a_1 = new std::complex<float>[index];
+	Z1a_2 = new std::complex<float>[index];
+
+
+	for (int i = 1; i < index; i++) {
+		
+		float w = angularFreq(i);
+
+		// part 1
+		double Xeq_1 = (w*PK.La) - (1 / (w*PK.Ca));
+		double Req_1 = PK.Ra;
+
+		// part 2
+		double Xeq_2 = -1 / (w*PK.Ct);
+		double Req_2 = 0;
+		
+		// total equavalent impedance Z1a
+		Z1a_1[i].imag(Xeq_1);
+		Z1a_1[i].real(Req_1);
+		Z1a_2[i].imag(Xeq_2);
+		Z1a_2[i].real(Req_2);
+		
+		Data[i].real(i);
+		Data[i].imag(i + 1);
+
+		Data[i] = Z1a_1[i]*Z1a_2[i] / (Z1a_1[i] + Z1a_2[i]);
+
+		std::cout << Data[i] << "\n";
+	};
+
+
+
+
+
 }

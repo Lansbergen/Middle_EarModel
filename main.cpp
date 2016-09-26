@@ -15,12 +15,13 @@ int main(int argc, char** argv) {
 	cout << "Enter age : \n";
 	cin >> test;
 
+	/*
 	temp.setAge(test);
 
 	int inputAge = temp.getAge();
 	
 	cout << "\n Age is : " << inputAge;
-
+	*/
 		
 	cout << "\n\n Speed of sound is : " << temp.getSpeedofSound();
 	
