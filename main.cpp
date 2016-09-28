@@ -10,12 +10,14 @@ int main(int argc, char** argv) {
 	cin >> freq_range;
 	
 	MiddleEar temp(freq_range);
-	int test;
+	//int test;
+
+	/*
 
 	cout << "Enter age : \n";
 	cin >> test;
 
-	/*
+	
 	temp.setAge(test);
 
 	int inputAge = temp.getAge();

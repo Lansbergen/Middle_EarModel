@@ -21,14 +21,14 @@ public:
 
 	// assessor - mutator functions
 	void setAge(int age_of_person);
-	int  getAge();
+	int  getAge() const;
 	
 	void setDiameter(float diameter=1.0);
 	void setLength(float length = 1.0);
-	float getDiameter();
-	float getLength();
+	float getDiameter() const;
+	float getLength() const;
 	
-	int getSpeedofSound();
+	int getSpeedofSound() const;
 
 	
 	
@@ -49,7 +49,7 @@ private:
 
 	// functions acting on data
 	void kringlebotn();
-	
+	void keefe();
 };
 
 

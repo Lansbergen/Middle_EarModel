@@ -11,7 +11,7 @@ Includes all parameters for the MiddleEar class
 // general
 struct ParamGeneral {
 	const int c = 35188;            // cm/sec @ 25 degC - speed of sound
-	const double pi = 3.1415926536; // pi to 10th decimal
+	const float pi = 3.1415926536f; // pi to 10th decimal
 	const double rho = 1.2040e-3;   // g/cm ^ 3 @  0daPa   @ 25 degC - density air
 };
 
@@ -45,14 +45,29 @@ struct ParamKringlebotn {
 	const int Ra = 60;			// resistance
 
 	// block Z1b
-	const float Ld = 7.5e-3f;     // inertance
-	const float Ls = 66e-3f;      // inertance
-	const float Cs = 0.3e-6f;     // compliance
-	const float Cr = 1.3e-6f;     // compliance
-	const int Rs = 20;         // resistance
-	const int Rr = 120;        // resistance
+	const float Ld = 7.5e-3f;   // inertance
+	const float Ls = 66e-3f;    // inertance
+	const float Cs = 0.3e-6f;   // compliance
+	const float Cr = 1.3e-6f;   // compliance
+	const int Rs = 20;		    // resistance
+	const int Rr = 120;			// resistance
 
+	// block Z2
+	const float Cm = 0.38e-6f;	// compliance
+	const int Rm = 120;			// resistance
 
+	// block Z3
+	const float Lo = 22e-3f;	// inertance
+	const int Ro = 20;			// resistance
+
+	// block Z4
+	const float Ci = 0.3e-6f;	// compliance
+	const int Ri = 6000;		// resistance
+
+	// block Z5
+	const float Lc = 46e-3f;	// inertance
+	const float Cc = 0.56e-6f;	// compliance
+	const int Rc = 330;			// resistance
 
 };
 
