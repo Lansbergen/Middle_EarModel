@@ -1,9 +1,14 @@
 
 #include "MiddleEar.h"
 #include <complex>
-#include <cmath>
+//#include <cmath>
 #include <iostream>
+#include <fstream>
+#include <string>
 
+using std::string;
+using std::cout;
+using std::complex;
 
 // define functions and constructors class MiddleEar
 
@@ -20,9 +25,11 @@ MiddleEar::MiddleEar(){
 MiddleEar::MiddleEar(int freq_range) {
 	
 	if (freq_range > 2500) {
-		std::cout << "Error: Frequency range exceeds 2500 Hz.";
-		exit(1);
+		cout << "Error: Frequency range exceeds 2500 Hz.";
+		exit(EXIT_FAILURE);
 	};
+
+	cout << "\n Using Middle-ear base class - object \n";
 
 	/*------------------------------------------------
 	needs to be a 1D array the size of freq_range
@@ -59,11 +66,6 @@ void MiddleEar::setAge(int age_of_person) {
 	age = age_of_person;
 }
 
-int MiddleEar::getAge() const {
-
-	return this->age;
-}
-
 void MiddleEar::setDiameter(float diameter) {
 
 	PEC.DiamEar = diameter;
@@ -72,6 +74,11 @@ void MiddleEar::setDiameter(float diameter) {
 void MiddleEar::setLength(float length) {
 
 	PEC.LengthEar = length;
+}
+
+int MiddleEar::getAge() const {
+
+	return this->age;
 }
 
 float  MiddleEar::getDiameter() const {
@@ -90,6 +97,41 @@ int MiddleEar::getSpeedofSound() const {
 	return PG.c;
 }
 
+complex<float> MiddleEar::getData(int ind) const {
+
+	if (ind > index || ind == 0) {
+
+		cout << "\ngetData: An Error Occurred, called index is greater then frequency index or is 0 \n";
+
+		// insert error if ind exceeds max frequency range (index) or if 0
+		exit(EXIT_FAILURE);
+	}
+	else {
+		return Data[ind];
+	}
+}
+
+void MiddleEar::storeData() {
+
+	std::ofstream file_out;// = new std::ofstream("output.txt");
+
+	// write to output.txt
+	if(!storeto.empty()){
+	file_out.open(storeto);
+	cout << "\n write data to " << storeto << "\n";
+	}
+	else {
+	file_out.open("output.txt");
+	cout << "\n write data to output.txt \n";
+	}
+	
+	for (int i = 1; i <= index; i++) {
+		file_out << Data[i] << std::endl;
+	}
+		
+	file_out.close();
+
+}
 
 /* 
 - Private functions - 
@@ -213,7 +255,9 @@ void MiddleEar::kringlebotn() {
 		// step 4
 		Data[i] = Z1a + Z1b + Zeq_step3;
 
-		std::cout << Data[i] << "\n";
+		
+		// dump data on screen for debugging purpose
+		//std::cout << Data[i] << "\n";
 		
 		
 
@@ -222,7 +266,3 @@ void MiddleEar::kringlebotn() {
 
 }
 
-void MiddleEar::keefe() {
-
-
-};

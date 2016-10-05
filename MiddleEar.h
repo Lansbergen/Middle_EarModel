@@ -5,8 +5,12 @@
 
 #include "Parameters.h"
 #include <complex>
+#include <string>
 
-typedef std::complex<float>* DataArray;
+using std::string;
+using std::complex;
+
+typedef complex<float>* DataArray;
 
 // Contains declarations for MiddleEar Class
 
@@ -21,35 +25,38 @@ public:
 
 	// assessor - mutator functions
 	void setAge(int age_of_person);
-	int  getAge() const;
-	
+	void setName(const string& storename) { storeto = storename; };
 	void setDiameter(float diameter=1.0);
 	void setLength(float length = 1.0);
+	
+	int  getAge() const;
 	float getDiameter() const;
 	float getLength() const;
-	
 	int getSpeedofSound() const;
-
+	complex<float> getData(int ind) const;
 	
 	
 	// store function
 	void storeData();
 
+protected:
+	// also available in child classes
+	int index;
+	ParamEarCanal PEC;
+	ParamGeneral PG;
 
 private:
 	int age;
-	int index;
-	ParamGeneral PG;
 	ParamKringlebotn PK;
-	ParamEarCanal PEC;
 	DataArray Data;
+	string storeto;
 
 	// supporting functions
 	float angularFreq(int freq);	// angular frequency
 
 	// functions acting on data
 	void kringlebotn();
-	void keefe();
+	
 };
 
 

@@ -1,14 +1,22 @@
-﻿Build started 27-9-2016 11:09:06.
+﻿Build started 5-10-2016 19:17:53.
      1>Project "D:\Software\middle_ear_cpp\Middle_EarModel\Middle_EarModel\Middle_EarModel.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt MiddleEar.cpp
+         MiddleEar.cpp
+     1>d:\software\middle_ear_cpp\middle_earmodel\middle_earmodel\middleear.cpp(163): warning C4244: 'initializing': conversion from 'const int' to 'float', possible loss of data
+     1>d:\software\middle_ear_cpp\middle_earmodel\middle_earmodel\middleear.cpp(181): warning C4244: 'initializing': conversion from 'const int' to 'float', possible loss of data
+     1>d:\software\middle_ear_cpp\middle_earmodel\middle_earmodel\middleear.cpp(185): warning C4244: 'initializing': conversion from 'const int' to 'float', possible loss of data
+     1>d:\software\middle_ear_cpp\middle_earmodel\middle_earmodel\middleear.cpp(208): warning C4244: 'initializing': conversion from 'const int' to 'float', possible loss of data
+     1>d:\software\middle_ear_cpp\middle_earmodel\middle_earmodel\middleear.cpp(219): warning C4244: 'initializing': conversion from 'const int' to 'float', possible loss of data
+     1>d:\software\middle_ear_cpp\middle_earmodel\middle_earmodel\middleear.cpp(230): warning C4244: 'initializing': conversion from 'const int' to 'float', possible loss of data
+     1>d:\software\middle_ear_cpp\middle_earmodel\middle_earmodel\middleear.cpp(241): warning C4244: 'initializing': conversion from 'const int' to 'float', possible loss of data
        Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Software\middle_ear_cpp\Middle_EarModel\Debug\Middle_EarModel.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Software\middle_ear_cpp\Middle_EarModel\Debug\Middle_EarModel.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Software\middle_ear_cpp\Middle_EarModel\Debug\Middle_EarModel.lib" /MACHINE:X86 Debug\main.obj
+         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Software\middle_ear_cpp\Middle_EarModel\Debug\Middle_EarModel.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Software\middle_ear_cpp\Middle_EarModel\Debug\Middle_EarModel.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Software\middle_ear_cpp\Middle_EarModel\Debug\Middle_EarModel.lib" /MACHINE:X86 Debug\AdultModel.obj
+         Debug\main.obj
          Debug\MiddleEar.obj
          Middle_EarModel.vcxproj -> D:\Software\middle_ear_cpp\Middle_EarModel\Debug\Middle_EarModel.exe
      1>Done Building Project "D:\Software\middle_ear_cpp\Middle_EarModel\Middle_EarModel\Middle_EarModel.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.26
+Time Elapsed 00:00:01.18

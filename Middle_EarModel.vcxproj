@@ -146,10 +146,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AdultModel.h" />
     <ClInclude Include="MiddleEar.h" />
     <ClInclude Include="Parameters.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AdultModel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MiddleEar.cpp" />
   </ItemGroup>
