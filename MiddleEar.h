@@ -23,6 +23,9 @@ public:
 	MiddleEar(int freq_range);
 	MiddleEar(int freq_range, int pressure_range);
 
+	// destuctor
+	~MiddleEar();
+
 	// assessor - mutator functions
 	void setAge(int age_of_person);
 	void setName(const string& storename) { storeto = storename; };
@@ -35,25 +38,31 @@ public:
 	int getSpeedofSound() const;
 	complex<float> getData(int ind) const;
 	
-	
 	// store function
 	void storeData();
+
+	// general purpose
+	int square(int x);
+	float square(float x);
+	double square(double x);
+
+	complex<float> impedanceToAdmittance(const complex<float>& impedance);
 
 protected:
 	// also available in child classes
 	int index;
 	ParamEarCanal PEC;
 	ParamGeneral PG;
-
-private:
-	int age;
-	ParamKringlebotn PK;
-	DataArray Data;
 	string storeto;
 
 	// supporting functions
 	float angularFreq(int freq);	// angular frequency
 
+private:
+	int age;
+	ParamKringlebotn PK;
+	DataArray Data;
+			
 	// functions acting on data
 	void kringlebotn();
 	

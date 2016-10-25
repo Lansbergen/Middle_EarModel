@@ -36,7 +36,7 @@ MiddleEar::MiddleEar(int freq_range) {
 	(thus index is 1 serves as 2nd dimension)
 	------------------------------------------------*/
 
-	Data = new std::complex<float>[freq_range];
+	Data = new complex<float>[freq_range];
 
 	index = freq_range;
 
@@ -55,6 +55,13 @@ MiddleEar::MiddleEar(int freq_range, int pressure_range) {
 	times pressure times 
 	(thus index is 1 serves as 3th dimension)
 	------------------------------------------------*/
+}
+
+// destructor
+MiddleEar::~MiddleEar() {
+
+	//delete[] Data;
+
 }
 
 /*
@@ -113,7 +120,7 @@ complex<float> MiddleEar::getData(int ind) const {
 
 void MiddleEar::storeData() {
 
-	std::ofstream file_out;// = new std::ofstream("output.txt");
+	std::ofstream file_out;
 
 	// write to output.txt
 	if(!storeto.empty()){
@@ -131,6 +138,40 @@ void MiddleEar::storeData() {
 		
 	file_out.close();
 
+	cout << "\n Kringlebotn model data saved to file \n";
+}
+
+int MiddleEar::square(int x) {
+
+	return x*x;
+}
+
+float MiddleEar::square(float x) {
+
+	return x*x;
+}
+
+double MiddleEar::square(double x) {
+
+	return x*x;
+}
+
+complex<float> MiddleEar::impedanceToAdmittance(const complex<float>& impedance) {
+
+	/*
+	Converts Impedance (Z) to Admittance (Y) by calculating individual conductance
+	and susceptance components, which are the reciprocal of resistance (R) and 
+	reactance (X) components
+	*/
+
+	float X = impedance.imag();
+	float R = impedance.real();
+
+	float G = R / (square(X) + square(R));	// Conductance
+	float B = -X / (square(X) + square(R)); // Susceptance
+	
+	return complex<float>(G,B);
+
 }
 
 /* 
@@ -147,8 +188,6 @@ float MiddleEar::angularFreq(int freq) {
 
 // functions acting on data
 void MiddleEar::kringlebotn() {
-
-	using std::complex;
 
 	// fill Data array (Kringlebotn) middle-ear model
 	for (int i = 1; i <= index; i++) {
